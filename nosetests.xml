@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="3" errors="0" failures="0" skip="0"><testcase classname="aloe.testclass.Loggin in with valid credentials" name="User search information in Google: Example 1" time="6.333"><system-out><![CDATA[I open browser specially for you!
-I close browser specially for you!
-]]></system-out></testcase><testcase classname="aloe.testclass.Loggin in with valid credentials" name="User search information in Google: Example 2" time="6.485"><system-out><![CDATA[I open browser specially for you!
-I close browser specially for you!
-]]></system-out></testcase><testcase classname="aloe.testclass.Loggin in with valid credentials" name="User search information in Google: Example 3" time="6.232"><system-out><![CDATA[I open browser specially for you!
-I close browser specially for you!
-]]></system-out></testcase></testsuite>

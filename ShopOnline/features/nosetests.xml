@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="1" errors="1"
+                                                 failures="0" skip="0"><testcase
+        classname="aloe.testclass.As a customer"
+        name="Adding one thing to basket" time="0.000">
+    <error type="aloe.exceptions.NoDefinitionFound"
+           message='The step r"Given webside "http://automationpractice.com/index.php" is open" is not defined'><![CDATA[Traceback (most recent call last):
+  File "/usr/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "/usr/local/lib/python2.7/dist-packages/aloe/registry.py", line 161, in wrapped
+    return function(*args, **kwargs)
+  File "/home/zaneta/Desktop/Python_challenge/Python_challenge/ShopOnline/features/Adding_clothes_to_basket.feature", line 6, in Adding one thing to basket
+    Given webside "http://automationpractice.com/index.php" is open
+  File "/usr/local/lib/python2.7/dist-packages/aloe/registry.py", line 161, in wrapped
+    return function(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/aloe/exceptions.py", line 61, in undefined_step
+    raise NoDefinitionFound(step)
+NoDefinitionFound: The step r"Given webside "http://automationpractice.com/index.php" is open" is not defined
+]]></error></testcase></testsuite>
