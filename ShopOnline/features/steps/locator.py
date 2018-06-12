@@ -14,4 +14,9 @@ class CategoryPageLocators(object):
     price = (By.XPATH,"//span[contains(@class, 'price product-price')]")
     more_button = (By.XPATH, "//a[contains(@title, 'View') and contains(@itemprop,'url')]")
 
+class SummaryProductPageLocators(object):
+    product_summary = (By.XPATH, "//div[contains(@class, 'clearfix')]")
+    message = (By.XPATH, "//div[contains(@class, 'layer_cart_product')]//h2")
+    items_in_cart = (By.XPATH, "//*[@class='ajax_cart_quantity']")
+
 

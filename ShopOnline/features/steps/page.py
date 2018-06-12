@@ -11,7 +11,8 @@ class BasePage(object):
         self.driver = driver
 
     def wait_for_element_for_secounds(self, element, secound):
-        WebDriverWait(self.driver, secound).until(EC.element_to_be_clickable(By.XPATH, '//a[@title="Add to cart"]'))
+        wait = WebDriverWait(self.driver, secound)
+        wait.until(EC.visibility_of(element))
 
 class MainPage(BasePage):
 
@@ -36,19 +37,16 @@ class CategoryPage(BasePage):
     element = self.driver.find_elements(*CategoryPageLocators.list_of_products)
     return True if len(element)>=1 else False
 
-
- def focus_on_product(self, product_number):
+ def focus_on_product(self, product_number=0):
      list_of_products = self.driver.find_elements(*CategoryPageLocators.list_of_products)
      product = list_of_products[product_number]
-     ActionChains(self.driver).move_to_element(product)
+     ActionChains(self.driver).move_to_element(product).perform()
 
- def add_to_cart_button_click(self, product_number=1):
+ def add_to_cart_button_click(self, product_number=0):
      list_of_products = self.driver.find_elements(*CategoryPageLocators.list_of_products)
      product = list_of_products[product_number]
      element = product.find_element(*CategoryPageLocators.add_to_cart_button)
-     pdb.set_trace()
-     #BasePage(self.driver).wait_for_element_for_secounds(element, 5)
-     #sleep(5)
+     self.wait_for_element_for_secounds(element, 5)
      element.click()
 
  def price_of_product_is_visible(self, product_number=1):
@@ -62,3 +60,19 @@ class CategoryPage(BasePage):
      product = list_of_products[product_number]
      element = product.find_element(*CategoryPageLocators.more_button)
      element.is_displayed()
+
+
+class ProductSummaryPage(BasePage):
+
+ def is_product_summary_present(self):
+     element = self.driver.find_element(*SummaryProductPageLocators.product_summary)
+     self.wait_for_element_for_secounds(element, 5)
+     element.is_displayed()
+
+ def get_message(self):
+     element = self.driver.find_element(*SummaryProductPageLocators.message)
+     return element.text
+
+ def get_value_items_in_cart(self):
+     element = self.driver.find_element(*SummaryProductPageLocators.items_in_cart)
+     return element.text
